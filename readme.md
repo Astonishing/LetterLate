@@ -1,0 +1,1 @@
+We all have letters to write, even when there’s no specific recipient in mind. Letter Random Deliveries is a place where you can anonymously write letters, thoughts, or anything you wish—and have them delivered to a random person. You can also receive letters from others, creating a simple and meaningful connection between strangers.
