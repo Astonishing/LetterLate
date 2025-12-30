@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FutureMe Clone</title>
+    <title>Letter Later</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,17 +16,21 @@
     </header>
 
     <main class="container">
-        <h2 class="page-title">A letter from <span></span>Dec 30, 2025</h2>
+        <h2 class="page-title">A letter from <span class="date-highlight">Dec 30, 2025</span></h2>
         
         <div class="editor-grid">
             <section class="letter-section">
                 <div class="textarea-container">
-                    <textarea placeholder="Dear FutureMe,"></textarea>
+                    <textarea placeholder="Dear FutureMe..."></textarea>
+                    <div class="textarea-footer">
+                        <span>Your words are safe with us.</span>
+                    </div>
                 </div>
             </section>
 
             <aside class="settings-section">
                 <div class="setting-group">
+                    <label>Deliver in</label>
                     <div class="button-row">
                         <button class="toggle-btn active">6 months</button>
                         <button class="toggle-btn">1 year</button>
@@ -39,15 +44,14 @@
                     <label>Select your <strong>audience</strong></label>
                     <div class="button-row">
                         <button class="toggle-btn active">Private</button>
-                        <button class="toggle-btn">Public, but anonymous</button>
+                        <button class="toggle-btn">Public, anonymous</button>
                     </div>
                 </div>
 
                 <div class="setting-group">
-                    <label>Make sure you <strong>get your letter</strong></label>
+                    <label>Email address</label>
                     <div class="input-wrapper">
-                        <span>Mail:</span>
-                        <input type="email" placeholder="Please enter an email">
+                        <input type="email" placeholder="example@email.com">
                     </div>
                 </div>
 
