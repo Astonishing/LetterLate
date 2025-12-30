@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letter Later</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letter Late</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container header-flex">
-            <h1 class="logo">Letter<span>Later</span></h1>
-        </div>
+      <div class="container header-flex">
+        <h1 class="logo">Letter<span>Late</span></h1>
+      </div>
     </header>
 
     <main class="container">
-        <h2 class="page-title">A letter from <span class="date-highlight">Dec 30, 2025</span></h2>
-        
-        <div class="editor-grid">
-            <section class="letter-section">
-                <div class="textarea-container">
-                    <textarea placeholder="Dear FutureMe..."></textarea>
-                    <div class="textarea-footer">
-                        <span>Your words are safe with us.</span>
-                    </div>
-                </div>
-            </section>
+      <h2 class="page-title">
+        A letter from <span class="date-highlight" id="date">Dec 30, 2025</span>
+      </h2>
 
-            <aside class="settings-section">
-                <div class="setting-group">
-                    <label>Deliver in</label>
-                    <div class="button-row">
-                        <button class="toggle-btn active">6 months</button>
-                        <button class="toggle-btn">1 year</button>
-                        <button class="toggle-btn">3 years</button>
-                        <button class="toggle-btn">5 years</button>
-                        <button class="toggle-btn">10 years</button>
-                    </div>
-                </div>
+      <div class="editor-grid">
+        <section class="letter-section">
+          <div class="textarea-container">
+            <textarea placeholder="Dear FutureMe..."></textarea>
+            <div class="textarea-footer">
+              <span>Your words are safe with us.</span>
+            </div>
+          </div>
+        </section>
 
-                <div class="setting-group">
-                    <label>Select your <strong>audience</strong></label>
-                    <div class="button-row">
-                        <button class="toggle-btn active">Private</button>
-                        <button class="toggle-btn">Public, anonymous</button>
-                    </div>
-                </div>
+        <aside class="settings-section">
+          <div class="setting-group">
+            <label>Deliver in</label>
+            <div class="button-row">
+              <button class="toggle-btn active">6 months</button>
+              <button class="toggle-btn">1 year</button>
+              <button class="toggle-btn">3 years</button>
+              <button class="toggle-btn">5 years</button>
+              <button class="toggle-btn">10 years</button>
+            </div>
+          </div>
 
-                <div class="setting-group">
-                    <label>Email address</label>
-                    <div class="input-wrapper">
-                        <input type="email" placeholder="example@email.com">
-                    </div>
-                </div>
+          <div class="setting-group">
+            <label>Select your <strong>audience</strong></label>
+            <div class="button-row">
+              <button class="toggle-btn active">Private</button>
+              <button class="toggle-btn">Public, anonymous</button>
+            </div>
+          </div>
 
-                <button class="send-btn">Send to the Future</button>
-            </aside>
-        </div>
+          <div class="setting-group">
+            <label>Email address</label>
+            <div class="input-wrapper">
+              <input type="email" placeholder="example@email.com" />
+            </div>
+          </div>
+
+          <button class="send-btn">Send to the Future</button>
+        </aside>
+      </div>
     </main>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
