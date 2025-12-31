@@ -10,13 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#date").textContent = formatted;
 });
 
-//Buttons Activeness
-const buttons = document.querySelectorAll(".toggle-btn");
+let selectedDelieveryButton = "6 months"; //Button to Pass at B.E
+let selectedAudienceButton = "private"; //Button to Pass at B.E
 
+const buttons = document.querySelectorAll(".toggle-btn");
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
     buttons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
+    selectedDelieveryButton = btn.textContent.trim(); //Button to Pass at B.E
   });
 });
 
@@ -26,7 +28,7 @@ audienceButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     audienceButtons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-    console.log(btn);
+    selectedAudienceButton = btn.textContent.trim(); //Button to Pass at B.E
   });
 });
 
@@ -37,13 +39,8 @@ finalButton.addEventListener("click", () => {
   //email middleware
   const emailInput = document.querySelector("#mail").value;
   console.log(emailInput);
-  if (!emailInput) {
-    alert("Error!");
-  } else {
-    // console.log(emailInput);
-
-    alert(emailInput);
-  }
+  console.log(selectedDelieveryButton);
+  if (!emailInput) alert("Error!");
 
   // console.log("Done!");
 });
