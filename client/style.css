@@ -172,7 +172,7 @@ textarea {
 }
 
 /* Send Button Decor */
-.send-btn {
+#send-btn {
   width: 100%;
   background: var(--send-btn);
   color: white;
@@ -189,7 +189,7 @@ textarea {
   transition: all 0.3s ease;
 }
 
-.send-btn:hover {
+#send-btn:hover {
   background-color: #cf3a38;
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(235, 77, 75, 0.4);

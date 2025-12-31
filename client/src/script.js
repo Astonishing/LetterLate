@@ -6,7 +6,9 @@ const day = String(d.getDate()).padStart(2, "0"); //Padestart: Adds 0 before x
 
 const formatted = `${year}-${month}-${day}`;
 
-document.querySelector("#date").textContent = formatted;
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#date").textContent = formatted;
+});
 
 //Buttons Activeness
 const buttons = document.querySelectorAll(".toggle-btn");
@@ -28,4 +30,12 @@ audienceButtons.forEach((btn) => {
   });
 });
 
+//Final Button
+const finalButton = document.querySelector("#send-btn");
 
+finalButton.addEventListener("click", () => {
+  //Need to add email middleware here
+
+  console.log("Done!");
+  alert("send?");
+});
