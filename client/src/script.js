@@ -60,7 +60,7 @@ finalButton.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
   };
 
-  fetch("http://localhost:2645/letters", {
+  fetch("http://localhost:2745/letters", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
