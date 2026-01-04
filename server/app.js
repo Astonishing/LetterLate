@@ -3,6 +3,8 @@ const cors = require("cors");
 
 // connect DB
 require("./db");
+const startScheduler = require("./utils/scheduler");
+startScheduler(); 
 
 // routes
 const lettersRoute = require("./routes/lettersR");
