@@ -1,4 +1,5 @@
 const Letter = require("../models/letterF");
+const sendlettermail = require("./mailer.js");
 
 function startScheduler() {
   console.log("Scheduler started");
@@ -13,10 +14,13 @@ function startScheduler() {
       });
 
       for (const letter of dueLetters) {
-        letter.status = "delivered";
-        await letter.save();
-
-        console.log("DELIVERED:", letter.email);
+        try {
+          await sendLetterEmail(letter.email, letter.letter);
+          letter.status = "delivered";
+          await letter.save();
+        } catch (err) {
+          console.error("Email failed:", err);
+        }
       }
     } catch (err) {
       console.error("Scheduler error:", err);
