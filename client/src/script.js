@@ -32,3 +32,66 @@ audienceButtons.forEach((btn) => {
   });
 });
 
+const finalButton = document.querySelector("#send-btn");
+const modalOverlay = document.querySelector("#modal-overlay");
+const loader = document.querySelector("#loader");
+const successTick = document.querySelector("#success-tick");
+const modalTitle = document.querySelector("#modal-title");
+const modalMessage = document.querySelector("#modal-message");
+const closeModal = document.querySelector("#close-modal");
+
+finalButton.addEventListener("click", async () => {
+  const emailInput = document.querySelector("#mail").value;
+  const letterText = document.querySelector("textarea").value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(emailInput)) {
+    alert("Invalid email format");
+    return;
+  }
+  if (!letterText.trim()) {
+    alert("Please write your letter first!");
+    return;
+  }
+
+  modalOverlay.style.display = "flex";
+  loader.style.display = "block";
+  successTick.style.display = "none";
+  closeModal.style.display = "none";
+  modalTitle.textContent = "Sending to the future...";
+
+  const payload = {
+    email: emailInput,
+    letter: letterText,
+    delivery: selectedDelieveryButton,
+    audience: selectedAudienceButton,
+    createdAt: new Date().toISOString(),
+  };
+
+  try {
+    const response = await fetch("http://localhost:2745/letters", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok) {
+      loader.style.display = "none";
+      successTick.style.display = "block";
+      modalTitle.textContent = "Letter Sent!";
+      modalMessage.textContent = `Your message is now traveling to ${selectedDelieveryButton} from now.`;
+      closeModal.style.display = "inline-block";
+    } else {
+      throw new Error("Server error");
+    }
+  } catch (error) {
+    modalOverlay.style.display = "none";
+    alert("Something went wrong. Please try again.");
+  }
+});
+
+closeModal.addEventListener("click", () => {
+  modalOverlay.style.display = "none";
+  document.querySelector("textarea").value = "";
+  document.querySelector("#mail").value = "";
+});

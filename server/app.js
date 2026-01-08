@@ -10,7 +10,7 @@ startScheduler();
 const lettersRoute = require("./routes/lettersR");
 
 const app = express();
-const PORT = 2745;
+const PORT = process.env.PORT || 2645;
 
 // middlewares
 app.use(cors());
